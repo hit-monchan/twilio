@@ -25,3 +25,11 @@ def submit():
     )
     print(message.sid)
     return render_template('success.html')
+
+@app.route('/smsmycountry')
+def smsmycountry():
+    from_country = request.values.get('FromCountry', None)
+    response = MessagingResponse()
+    response.message('Hi! It looks like your phone was located in %s' % from_country)
+    print (str(response))
+    return str(response)
