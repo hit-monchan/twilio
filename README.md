@@ -18,6 +18,11 @@ Setup Instructions:
 To access using ngrok url
 - run ngrok
 
-- The end -
+- In twilio console, do the following:
+1. Create your TwiML App
+2. Configure your TwiML App
+
+
+-------------------------- The end --------------------------------
 
 
