@@ -12,6 +12,7 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
+# myapp will get the user phone number and then create an outbound message from twilio to user
 @app.route('/submit')
 def submit():
     phone_number = request.values.get('phoneNumber')
@@ -26,6 +27,8 @@ def submit():
     print(message.sid)
     return render_template('success.html')
 
+# User sends a message to twilio number. 
+# Twilio will trigger myapp to response the message below back to user.
 @app.route('/smsmycountry')
 def smsmycountry():
     from_country = request.values.get('FromCountry', None)
